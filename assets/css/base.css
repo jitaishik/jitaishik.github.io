@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:           #111827;
+  --surface:      #1f2937;
+  --surface-2:    #263040;
+  --border:       #374151;
+  --text:         #f9fafb;
+  --text-muted:   #9ca3af;
+  --accent:       #6366f1;
+  --accent-hover: #818cf8;
+  --nav-bg:       rgba(17, 24, 39, 0.92);
+  --thumb-bg:     #0d1117;
+  --font:         'Inter', system-ui, -apple-system, sans-serif;
+  --max-w:        860px;
+  --nav-h:        60px;
+}
+
+[data-theme="light"] {
+  --bg:           #f8f9fa;
+  --surface:      #ffffff;
+  --surface-2:    #f1f3f5;
+  --border:       #dee2e6;
+  --text:         #111827;
+  --text-muted:   #6b7280;
+  --accent:       #4f46e5;
+  --accent-hover: #6366f1;
+  --nav-bg:       rgba(248, 249, 250, 0.92);
+  --thumb-bg:     #f1f3f5;
+}
+
+/* Badge overrides for light mode */
+[data-theme="light"] .badge-nature   { background: #ede9fe; color: #5b21b6; }
+[data-theme="light"] .badge-oral     { background: #dcfce7; color: #15803d; }
+[data-theme="light"] .badge-conf     { background: #dbeafe; color: #1d4ed8; }
+[data-theme="light"] .badge-journal  { background: #dbeafe; color: #1d4ed8; }
+[data-theme="light"] .badge-preprint { background: #f3f4f6; color: #374151; border: 1px solid #e5e7eb; }
+[data-theme="light"] .badge-thesis   { background: #fef3c7; color: #92400e; }
+[data-theme="light"] .badge-intern   { background: #fef3c7; color: #92400e; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+a:hover { color: var(--accent-hover); }
+
+/* Layout */
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+main {
+  padding-top: calc(var(--nav-h) + 48px);
+  padding-bottom: 80px;
+}
+
+.section { margin-bottom: 64px; }
+
+.section-title {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.badge-nature   { background: #3b1e6e; color: #c4b5fd; }
+.badge-oral     { background: #14532d; color: #86efac; }
+.badge-conf     { background: #1e3a5f; color: #93c5fd; }
+.badge-journal  { background: #1e3a5f; color: #93c5fd; }
+.badge-preprint { background: #374151; color: #d1d5db; }
+.badge-thesis   { background: #292524; color: #d6d3d1; }
+.badge-intern   { background: #292524; color: #d6d3d1; }
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 0;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+footer a { color: var(--text-muted); }
+footer a:hover { color: var(--accent-hover); }
+
+/* Skip to content */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 12px;
+  z-index: 100;
+  border-radius: 0 0 4px 0;
+  font-size: 14px;
+}
+.skip-link:focus { top: 0; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* Shared link pill button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 14px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  transition: all 0.15s;
+  cursor: pointer;
+}
+.btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.highlight { font-weight: 700; color: var(--text); }
+.muted { color: var(--text-muted); }
